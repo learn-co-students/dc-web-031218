@@ -31,7 +31,7 @@ Atom keyboard shortcuts:
 * Command + d selects other matching words
 * Command + Control + up / down move a line up or down
 
-http://code-worrier.com/blog/map-and-next/
+http://d2wy8f7a9ursnm.cloudfront.net/atom-editor-cheat-sheet.pdf
 
 ## Slack
 

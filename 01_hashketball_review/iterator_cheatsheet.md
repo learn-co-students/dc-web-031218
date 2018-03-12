@@ -5,7 +5,12 @@
 - use when you want to get some data related to the original array for each element in it
 - example: I want to get a list of students' first names
 ```ruby
-['Kyle DiPeppe', 'Yolanda Galdamez', 'Jerry Lee', 'Austin Wolfe'].collect { |full_name| full_name.split(' ').first }   #=> ['Kyle', 'Yolanda', 'Jerry', 'Austin']
+['Kyle DiPeppe',
+  'Yolanda Galdamez',
+  'Jerry Lee',
+  'Austin Wolfe'
+].collect { |full_name| full_name.split(' ').first }
+#=> ['Kyle', 'Yolanda', 'Jerry', 'Austin']
 ```
 
 ### Select
@@ -15,7 +20,12 @@
 - use when you want to find matches out of an array
 - example: I want a list of students who's names start with 'M'
 ```ruby
-['Mario Gamboa-Diaz', 'Mor Kenane', 'Max Goodman', 'Leeza Luncheon'].select { |name| name.start_with?('M') }   #=>  ['Mario Gamboa-Diaz', 'Mor Kenane', 'Max Goodman']
+['Mario Gamboa-Diaz',
+  'Mor Kenane',
+  'Max Goodman',
+  'Leeza Luncheon'
+].select { |name| name.start_with?('M') }
+#=>  ['Mario Gamboa-Diaz', 'Mor Kenane', 'Max Goodman']
 ```
 
 ### Each
@@ -25,7 +35,11 @@
 - use when you want to perform some other task based on information in the array
 - example: Let's say I build a slackbot that would send a message to each student I pass to it
 ```ruby
-['Justin Hamlin', 'Deep Patel', 'Ryan Youngdale'].each { |student|  send_a_slack_message_to(student) }   #=>  ['Justin Hamlin', 'Deep Patel', 'Ryan Youngdale']
+['Justin Hamlin',
+  'Deep Patel',
+  'Ryan Youngdale'
+].each { |student|  send_a_slack_message_to(student) }
+#=>  ['Justin Hamlin', 'Deep Patel', 'Ryan Youngdale']
 ```
 - note: though this method returned the array, it also executed other code which sent slack messages to all these
 
@@ -47,5 +61,6 @@
   { name: 'Andrew Cohn',
     status: 'instructor'
   }
-].find { |person|  person[:status] == 'student'}   #=> {:name=>"Bruno Garcia Gonzalez", :status=>"student"}
+].find { |person|  person[:status] == 'student'}
+#=> {:name=>"Bruno Garcia Gonzalez", :status=>"student"}
 ```

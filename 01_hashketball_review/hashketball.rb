@@ -235,3 +235,28 @@ end
 #     }
 #   }
 # end
+
+def num_points_scored(name)
+  found_player = find_player(name)
+  found_player[:points]
+end
+
+def shoe_size(name)
+  find_player(name)[:shoe]
+end
+
+def find_player(name)
+  if game_hash[:home][:players][name]
+    game_hash[:home][:players][name]
+  elsif game_hash[:away][:players][name]
+    game_hash[:away][:players][name]
+  end
+end
+
+def team_colors(team_name)
+  if game_hash[:home][:team_name] == team_name
+    game_hash[:home][:colors]
+  elsif game_hash[:away][:team_name] == team_name
+    game_hash[:away][:colors]
+  end
+end

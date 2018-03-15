@@ -24,4 +24,4 @@ Write an implementation of a bank account that meets the following requirements:
 .whale should return the account with the largest balance
 .overdraw_warning should return all accounts under min balance of 300
 #deposit should increase an account balance by a specific amount
-#withdraw should decrease an account balance by a specific amount  
+#withdraw should decrease an account balance by a specific amount

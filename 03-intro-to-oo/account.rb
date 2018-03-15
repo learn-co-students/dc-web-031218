@@ -1,11 +1,14 @@
 require 'pry'
 
 class Account
-  attr_reader :owner_name
+  attr_reader :owner_name, :balance
+  # @@all = []
+  ALL = []
 
   def initialize(owner_name, balance)
     @owner_name = owner_name
     @balance = balance
+    ALL << self
   end
 
   def transfer_account(new_owner)
@@ -13,18 +16,29 @@ class Account
     @owner_name = new_owner
   end
 
-  # reader, getter
-  def owner_name
-    @owner_name
+  # # reader, getter
+  # def owner_name
+  #   @owner_name
+  # end
+  #
+  # # writer, setter
+  # def owner_name=(owner_name)
+  #   @owner_name = name
+  # end
+
+  def print_balance
+    # $50.00
+    # "$" + balance.to_s + ".00"
+    "$#{balance}.00"
   end
 
-  # writer, setter
-  def owner_name=(owner_name)
-    @owner_name = name
+  def self.all
+    ALL
   end
-  def balance=(balance)
-    @balance = balance
-  end
+
+  # def balance=(balance)
+  #   @balance = balance
+  # end
 
 end
 

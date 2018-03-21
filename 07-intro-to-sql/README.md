@@ -103,10 +103,14 @@ ALTER TABLE fans ADD COLUMN artist_id INTEGER;
 INSERT INTO fans(name, artist_id) VALUES ("Rob", 169);
 ```
 
+```
+INSERT INTO fans(artist_id, name) VALUES (169, "Deep");
+```
+
 6. Write the SQL to return fans that are not fans of the black eyed peas.
 
 ```SQL
-
+SELECT * FROM fans WHERE artist_id != 169;
 ```
 
 ---

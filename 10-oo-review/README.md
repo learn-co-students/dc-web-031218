@@ -8,9 +8,11 @@ Please build out the methods listed below.
 
 #### Guest
   - Guest.find_all(job) returns all guests of that job type
+  - Guest#big_talker returns guests with more than one appearances
 
 #### Show
   - Show#invite_guest(guest, date) takes an existing guest invites them to appear on the show at a specific time
   - Show#sweeps_week returns all guests who appear during November, February, May or July
   - Show#guests_on(date) returns all guests who appeared on a specific date
-  - Show#friend_of_show returns guests who have appeared on a show more than 5 times total or more than 2 times in 2018
+  - Show#friend_of_show returns guests who have appeared on a show more than twice
+  - Show.network(network) returns all shows on that network

@@ -20,7 +20,7 @@ class Show
   end
   
   def appearances 
-    #return an array of appearances on this show
+    # return an array of appearances on this show
     Appearance.all.select {|a| a.show == self}
   end
   

@@ -90,10 +90,10 @@ Normalization vs. Denormalization
 Normalized == referring to things by ids
 Denormalization == keeping lots of copies of the same data
 
-Trade off between writing and reading
+Trade off between _writing_ and _reading_
 SQL vs. NoSQL
 
-Disadvantages
+### Disadvantages
 
 * More data
   * Sometimes a problem
@@ -101,9 +101,10 @@ Disadvantages
 * Single Source of truth
   * If you change the artists name, it won't change it on the track!
 
-Advantages
+### Advantages
 
 * Don't have to join
+* Easier to think about reading data
 
 ### Pragmas
 
@@ -172,20 +173,51 @@ SELECT artists.name FROM artists ORDER BY artists.name LIMIT 10;
 9.  Write the SQL to return all albums' titles and the names of their artists
 
 ```SQL
-
+SELECT albums.title, artists.name FROM albums JOIN artists ON albums.artistId = artists.artistId;
 ```
 
 10. Write the SQL to return artist name, album name and number of tracks on that album
 
-```SQL
+Group by something that is unique per each row in the set of results that we want
 
+For instance, if we want one result per album, then group by album id
+
+if we want one result per artist, then group by artist id
+
+```SQL
+SELECT
+albums.title,
+artists.name,
+COUNT(tracks.trackId)
+FROM albums JOIN artists
+ON albums.artistId = artists.artistId
+JOIN tracks
+ON tracks.albumId = albums.albumId
+GROUP BY albums.albumId;
 ```
 
 11. Write the SQL to return the names of all of the artists with any songs in the 'Pop' Genre
 
-```SQL
+x genre ("Pop")
+x tracks have a genre
+x tracks have an album
+x albums have an artist
+artist (name)
 
+```SQL
+SELECT artists.name FROM genres
+JOIN tracks
+ON tracks.genreId = genres.genreId
+JOIN albums
+ON tracks.albumId = albums.albumId
+JOIN artists
+ON albums.artistId = artists.artistId WHERE genres.name = "Pop"
+GROUP BY artists.artistId;
 ```
+
+SQL ignores whitespace
+" " == "\t" == "\n"
+newlines, tabs, spaces all the same
 
 12. Write the SQL to return
 

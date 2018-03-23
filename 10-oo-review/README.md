@@ -8,7 +8,7 @@ Please build out the methods listed below.
 
 #### Guest
   - Guest.find_all(job) returns all guests of that job type
-  - Guest#big_talker returns guests with more than one appearances
+  - Guest.big_talker returns guests with more than one appearances
 
 #### Show
   - Show#invite_guest(guest, date) takes an existing guest invites them to appear on the show at a specific time

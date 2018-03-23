@@ -28,7 +28,14 @@ What are the ways we can run this sql?
 CREATE TABLE IF NOT EXISTS fans(id INTEGER PRIMARY KEY, artistId INTEGER);
 ```
 
+* sqlite3 CLI - Command Line Interface
+* read sql from a file
+* send sql statements from ruby
+
 How do we run this sql from Ruby?
+
+Setup a connection to sqlite3 process using the gem
+Do this in our environment file.
 
 ## Setting up our environment
 

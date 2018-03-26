@@ -9,9 +9,15 @@
 Questions from the board:
 
 * Custom class constructors
+  Why would we use anything other than Artist.new to create instances of a class?
 * Keyword arguments
+  Practice syntax, talk about what it's for, how it differs from positional arguments
+* `send` method - how it works, what it is
 
 Anything else?
+
+DRY
+Don't Repeat Yourself
 
 ## Executing SQL from Ruby
 

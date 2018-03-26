@@ -6,6 +6,13 @@
 2.  Use inheritance to extract methods for reuse
 3.  Introduce "metaprogramming" concepts
 
+Questions from the board:
+
+* Custom class constructors
+* Keyword arguments
+
+Anything else?
+
 ## Executing SQL from Ruby
 
 * Set up a connection to SQLite3 process using the gem

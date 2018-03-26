@@ -1,4 +1,3 @@
-# What is our Gemfile for?
-
 gem 'pry'
 gem 'sqlite3'
+gem 'require_all'

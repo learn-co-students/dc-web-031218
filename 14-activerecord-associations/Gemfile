@@ -1,0 +1,8 @@
+gem 'pry'
+gem 'sqlite3'
+gem 'require_all'
+gem 'rake'
+gem 'activerecord'
+
+# added
+gem 'sinatra-activerecord'

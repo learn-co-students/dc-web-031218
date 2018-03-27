@@ -1,0 +1,21 @@
+# Tasks for managing our project
+
+desc 'Prints World'
+task :hello do
+  puts "World!"
+end
+
+desc 'Runs a console'
+task :console do
+  require_relative 'environment.rb'
+  Pry.start
+end
+
+# Load rake tasks for database management
+require "sinatra/activerecord/rake"
+
+namespace :db do
+  task :load_config do
+    require "sinatra/activerecord"
+  end
+end

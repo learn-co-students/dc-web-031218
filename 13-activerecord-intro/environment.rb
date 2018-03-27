@@ -9,4 +9,5 @@ require "sinatra/activerecord"
 DB = SQLite3::Database.new("db/chinook.db")
 
 # Changed
+
 ActiveRecord::Base.establish_connection :development

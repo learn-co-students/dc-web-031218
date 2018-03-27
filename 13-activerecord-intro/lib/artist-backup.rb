@@ -1,4 +1,4 @@
-class Artist
+class BackupArtist
   attr_accessor :name
   attr_reader :id
 

@@ -10,11 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180327) do
+ActiveRecord::Schema.define(version: 20180327194826) do
+
+  create_table "albums", force: :cascade do |t|
+    t.string "name"
+    t.integer "artist_id"
+  end
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
     t.string "genre"
+    t.boolean "grammy_award_winner"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "address"
+  end
+
+  create_table "fans", force: :cascade do |t|
+    t.string "name"
+    t.integer "artist_id"
   end
 
 end

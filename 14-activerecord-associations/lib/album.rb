@@ -1,2 +1,0 @@
-class Album
-end

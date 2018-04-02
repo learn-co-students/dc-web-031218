@@ -1,5 +1,7 @@
 # Intro to Sinatra - MVC
 
+## MVC?
+
 ## Configuring Sinatra
 
-## MVC?
+## Sinatra Features

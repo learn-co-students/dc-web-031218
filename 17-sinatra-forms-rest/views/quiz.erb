@@ -1,0 +1,21 @@
+<h1>Harry Potter Quiz</h1>
+
+<form action="/submit" method="POST">
+  What house are our heroes members of?
+  <br />
+  <input type="text" name="house"/>
+  <br />
+  Can you name 10 members of that house?
+  <br />
+  <% 3.times do |x| %>
+    <%= "#{x+1}. " %><input type="text" name="member[]" />
+    <br />
+  <% end %>
+  <input type="submit" value="Submit Answers" />
+</form>
+
+<% if @success %>
+  <h3>You Got It!</h3>
+<% else %>
+  <h3>Wrong! Try Again.</h3>
+<% end %>

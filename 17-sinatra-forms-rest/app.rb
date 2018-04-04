@@ -7,13 +7,8 @@ class Application < Sinatra::Base
     erb :sample
   end
 
-  post '/params' do
-    puts params
-    erb :sample
-  end
-
   get '/hello/:name' do
-    @name = params[:name]
-    erb :sample
+    name = params[:name]
+    "Hello, #{name}!"
   end
 end

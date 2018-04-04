@@ -1,0 +1,8 @@
+gem 'bundler'
+gem 'require_all'
+gem 'rake'
+gem 'sinatra'
+gem 'activerecord', require: 'active_record'
+gem 'sinatra-activerecord', require: 'sinatra/activerecord'
+gem 'sqlite3'
+gem 'pry'

@@ -18,9 +18,21 @@ class Application < Sinatra::Base
     erb :quiz
   end
 
-  post '/submit' do
+  # create - create an attempt
+  post '/attempts' do
     puts params
-    @success = Quiz.new(params).correct?
-    erb :quiz
+    @result = Quiz.new(params).correct?
+    attempt = Attempt.create(submission: params.to_s, status: @result)
+    redirect to "/attempts/#{attempt.id}"
+    # erb 'attempts/show'.to_sym
+  end
+
+  # Routes - some resource
+  # Attempts
+  #   a set of answers to a question
+  # show - get a single attempt by id
+  get '/attempts/:id' do
+    @attempt = Attempt.find(params[:id])
+    erb 'attempts/show'.to_sym
   end
 end

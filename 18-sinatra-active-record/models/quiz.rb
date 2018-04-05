@@ -1,4 +1,4 @@
-class Quiz < ActiveRecord::Base
+class Quiz
 
   GRYFFINDOR_NAMES = ["Harry", "Ron", "Hermione", "Neville", "Ginny"]
 

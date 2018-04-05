@@ -26,12 +26,20 @@ Reference the diagram
 # Domain
 
 Quizzes
+Questions
 Answers
 Attempts - a set of answers
+Users
 
 * X table - create one from a migration (columns)
 * X model class inheriting from ActiveRecord::Base
 * controller actions
 * erb files
 
-Users
+## Quiz
+
+Quiz
+has_many questions
+
+Question
+belongs_to one quiz

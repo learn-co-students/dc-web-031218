@@ -1,0 +1,20 @@
+<h2> <%= @quiz.title %> </h2>
+<small> <%= @quiz.difficulty %> </small>
+<a href="/quizzes/<%= @quiz.id %>/edit">Edit</a>
+<form action="/quizzes/<%= @quiz.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+</form>
+
+<!-- questions -->
+<form method="POST" action="/attempts">
+  <ul>
+  <% @quiz.questions.each do |question| %>
+  <li>
+    <%= question.content %>
+    <input type="text" name="answer" />
+  </li>
+  <% end %>
+</ul>
+<input type="submit" />
+</form>

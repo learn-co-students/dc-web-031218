@@ -1,0 +1,4 @@
+<h2> List of all the quizzes </h2>
+<% @quizzes.each do |quiz| %>
+  <a href=<%= "/quizzes/#{quiz.id}" %>><%= quiz.title %></a>
+<% end %>

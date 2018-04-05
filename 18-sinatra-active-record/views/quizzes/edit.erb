@@ -1,0 +1,6 @@
+<form method="POST" action="/quizzes/<%= @quiz.id %>">
+  <input name="title" type="text" value="<%= @quiz.title %>">
+  <input name="difficulty" type="number" value="<%= @quiz.difficulty %>">
+  <input type="hidden" name="_method" value="patch">
+  <button>Update!</button>
+</form>

@@ -1,0 +1,6 @@
+<h1>HELLO FROM TACOS INDEX</h1>
+
+<% @tacos.each do |taco| %>
+  <p>Name: <%= taco.name %></p>
+  <p>Ingredients <%= taco.num_ingredients %></p>
+<% end %>

@@ -1,0 +1,15 @@
+<ol>
+  <% @tacos.each do |taco| %>
+    <li>
+      <!-- <a href='/tacos/<%= taco.id %>'>
+        <%= taco.name %>
+      </a> -->
+      <!-- <a href='<%= taco_path(taco) %>'>
+        <%= taco.name %>
+      </a> -->
+
+      <!--  Link to generates an 'a' tag like the above-->
+      <%= link_to taco.name, taco_path(taco)  %>
+    </li>
+  <% end %>
+</ol>

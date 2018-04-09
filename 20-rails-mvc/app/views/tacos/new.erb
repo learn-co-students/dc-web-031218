@@ -1,0 +1,19 @@
+<form action="<%= tacos_path %>" method="post">
+  <div>
+    <label>Name: </label>
+    <input type="text" name="taco[name]" value="" />
+  </div>
+  <div >
+    <% @ingredients.each do |ingredient| %>
+    <span style="white-space:nowrap">
+      <label><%= ingredient.name %></label>
+      <input
+      type="checkbox"
+      name="taco[ingredient_ids][]"
+      value="<%= ingredient.id %>"
+      style="margin-right:20px" />
+    </span>
+    <% end %>
+  </div>
+  <input type="submit" value="Make Taco" />
+</form>

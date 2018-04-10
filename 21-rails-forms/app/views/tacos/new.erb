@@ -1,0 +1,60 @@
+<!-- <form action="<%= tacos_path %>" method="post">
+  <div>
+    <label>Name: </label>
+    <input type="text" name="taco[name]" value="" />
+  </div>
+  <div >
+    <% @ingredients.each do |ingredient| %>
+    <span style="white-space:nowrap">
+      <label><%= ingredient.name %></label>
+      <input
+      type="checkbox"
+      name="taco[ingredient_ids][]"
+      value="<%= ingredient.id %>"
+      style="margin-right:20px" />
+    </span>
+    <% end %>
+  </div>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit" value="Make Taco" />
+</form> -->
+
+ <!-- <%= form_tag tacos_path do %>
+   <%= label_tag :name %>
+   <%= text_field_tag 'taco[name]' %>
+
+   <% @ingredients.each do |ingredient| %>
+     <span style="white-space:nowrap; margin-right:20px">
+       <%= label_tag ingredient.name %>
+       <%= check_box_tag("ingredient_id[{ingredient.id}]", ingredient.id, false, {name: "taco[ingredient_ids][]"}) %>
+     </span>
+   <% end %>
+
+   <%= submit_tag 'Make Taco' %>
+ <% end %> -->
+
+<%= form_for @taco do |f| %>
+  Taco <%= f.label :name  %>
+  <%= f.text_field :name %>
+<!-- arg1: AR method on the form model that associates this collection
+arg2: collection of objects we are iterating through
+arg3: which method (on a collection object) to attach to the value input attribute
+arg4: which method (on a collection object) to attach to the label -->
+  <div class="">
+    <%= f.collection_check_boxes(:ingredient_ids, @ingredients, :id, :name, {}, {style: 'margin-left:20px', class: 'niky-rules'}) %>
+  </div>
+
+  <%= fields_for :ingredient do |ingredient_fields| %>
+    <div class="">
+      <h3>New Ingredient</h3>
+      <%= ingredient_fields.label :name%>
+      <%= ingredient_fields.text_field :name %>
+      <%= ingredient_fields.label :calories %>
+      <%= ingredient_fields.number_field :calories %>
+    </div>
+   <% end %>
+   
+<div class="">
+  <%= f.submit %>
+</div>
+<% end %>

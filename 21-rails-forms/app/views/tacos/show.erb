@@ -1,0 +1,8 @@
+<%= @taco.name %>
+<ul>
+  <% @taco.ingredients.each do |ingredient| %>
+  <li>
+    <%= ingredient.name %>: <%= ingredient.calories %>
+  </li>
+  <% end %>
+</ul>

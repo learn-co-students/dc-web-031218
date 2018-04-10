@@ -189,7 +189,7 @@ Take a look at the controller, it has all the RESTful methods, and these methods
 We don't want all the files created with the scaffold and in practice you won't actually use it so let's delete it. Why use a machete when we can use a scalpel? The scaffold just does **too much**
 
 ```ruby
-rails d scaffold dinosaur
+rails d scaffold taco
 ```
 
 Let's go ahead and generate a new Tacos controller.

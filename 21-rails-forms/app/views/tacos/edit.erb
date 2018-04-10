@@ -1,10 +1,8 @@
+<!-- this is the exact same form from our new.erb. WAT???? -->
 <%= form_for @taco do |f| %>
   Taco <%= f.label :name  %>
   <%= f.text_field :name %>
-<!-- arg1: AR method on the form model that associates this collection
-arg2: collection of objects we are iterating through
-arg3: which method (on a collection object) to attach to the value input attribute
-arg4: which method (on a collection object) to attach to the label -->
+
   <div class="">
     <%= f.collection_check_boxes(:ingredient_ids, @ingredients, :id, :name, {}, {style: 'margin-left:20px', class: 'niky-rules'}) %>
   </div>

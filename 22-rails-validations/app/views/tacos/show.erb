@@ -1,0 +1,12 @@
+<h3>
+  <%= @taco.name %>
+</h3>
+<ul>
+  <% @taco.ingredients.each do |ingredient| %>
+  <li>
+    <%= ingredient.name %>: <%= ingredient.calories %>
+  </li>
+  <% end %>
+</ul>
+<button><%= link_to('Edit Taco', edit_taco_path, {method: :get}) %></button>
+<%= button_to('Delete Taco', {action: 'destroy', id: @taco.id}, {method: :delete}) %>

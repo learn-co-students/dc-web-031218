@@ -1,0 +1,22 @@
+<!-- this is the exact same form from our new.erb. WAT???? -->
+<%= form_for @taco do |f| %>
+  Taco <%= f.label :name  %>
+  <%= f.text_field :name %>
+  <div class="">
+    <%= f.collection_check_boxes(:ingredient_ids, @ingredients, :id, :name, {}, {style: 'margin-left:20px', class: 'niky-rules'}) %>
+  </div>
+
+  <%= f.fields_for :ingredients do |ingredient| %>
+    <div class="">
+      <h3>New Ingredient</h3>
+      <%= ingredient.label :name%>
+      <%= ingredient.text_field :name %>
+      <%= ingredient.label :calories %>
+      <%= ingredient.number_field :calories %>
+    </div>
+   <% end %>
+
+<div class="">
+  <%= f.submit %>
+</div>
+<% end %>

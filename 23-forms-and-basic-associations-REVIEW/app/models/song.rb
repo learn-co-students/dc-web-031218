@@ -26,16 +26,17 @@ class Song < ActiveRecord::Base
   end
 
   def note_contents=(notes)
-    note_instances = notes.map do |note_content|
-      Note.create(content: note_content)
-    end
-
-    note_instances.each do |note|
-      self << note
-    end
-
     self.notes << notes.reject(&:empty?).map { |n| Note.create(content: n) }
-    byebug
+
+    # similar solution below
+
+    # note_instances = notes.reject(&:empty?).map do |note_content|
+    #   Note.create(content: note_content)
+    # end
+    #
+    # note_instances.each do |note|
+    #   self.notes << note
+    # end
   end
 
   # attr_accessor :artist

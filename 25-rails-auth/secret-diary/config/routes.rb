@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   get '/signin', to: 'application#signin'
   post '/signin', to: 'application#signin'
   get '/diary', to: 'application#diary'
+  get '/logout', to: 'application#logout'
+  get '/missile_codes', to: 'application#missile_codes'
 end

@@ -21,9 +21,13 @@ end
 
 
 ### Problems
+Sessions - using cookies
+- doesn't remember who you are (usability rather than security)
+
+Authorization
 - anyone could just navigate to the 'secure' route!
 - everyone goes to the same page when signed in!
-- doesn't remember who you are (usability rather than security)
+
 
 - not encrypted 'over the wire' - in transmission (someone who is on your network could see your password!)
   - ssl - https://
@@ -37,6 +41,8 @@ end
 The big issue!!!
 - passwords are in the database
 - an attacker with access to the database gets all the usernames and passwords
+
+solved using bcrypt + has_secure_password
 
 ## Encryption
 'garbles' text
@@ -65,4 +71,37 @@ password digest = hash(pwd + salt) + salt
 
 ## Sessions and Cookies
 
+### Cookies
+store information about you / your 'session' in your browser
+send that information back to the server with each request
+  uses http header
+    Set-Cookie - header you set on the response
+    Cookie - header that the browser will send back with the same information on each subsequent request
+
+  session
+
+1. In your controller, you use session[:user_id] = 5
+2. Rails encrypts your session data using the secret_key_base
+3. Rails sets the Set-Cookie header on the response
+4. On subsequent requests, Chrome sends the Cookie header with the information from Set-Cookie
+5. Rails decrypts the Cookie
+6. you can use session[:user_id] as if it were a ruby Hash
+
+Set-Cookie
+T0h4ek96T0RISWhZeGE5RlQveERlcmN3anZGTFBPM2tta0g1WUVJanRFcmI4dXVOY3NQdjhOSmRyNUIzOGdMUTJmM3ErY2VTcWd5WFN6U09sNDRPMGs5b3VVQitJWDRKNFI5YVc0SzlqQjZwR2hxZU42U3B6ODYya1RHZVRMQ1R4bEdFWWFtcG5wRGN1VG5KLy9sV1NCWmlUMEJVV003czlKYk0wQ0V5aGljPS0tVWs4TU5kWlcrNEJ4QkUxSE1hU293UT09--842955684984fd22884c0f7dd79cba1c99960e69
+
+Cookie
+T0h4ek96T0RISWhZeGE5RlQveERlcmN3anZGTFBPM2tta0g1WUVJanRFcmI4dXVOY3NQdjhOSmRyNUIzOGdMUTJmM3ErY2VTcWd5WFN6U09sNDRPMGs5b3VVQitJWDRKNFI5YVc0SzlqQjZwR2hxZU42U3B6ODYya1RHZVRMQ1R4bEdFWWFtcG5wRGN1VG5KLy9sV1NCWmlUMEJVV003czlKYk0wQ0V5aGljPS0tVWs4TU5kWlcrNEJ4QkUxSE1hU293UT09--842955684984fd22884c0f7dd79cba1c99960e69
+
+
+Indicator that they've signed in
+On subsequent requests, they shouldn't have to authenticate again
+
 ## Authorization
+What can you access?
+Which users can access what on what pages?
+
+Check before doing things that the user has the correct Authorization
+Set up different 'roles'
+gem 'cancancan'
+gem 'pundit'

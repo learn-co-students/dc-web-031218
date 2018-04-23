@@ -43,13 +43,14 @@ Object
 
 ## Statements vs. Expressions
 
+What are statements?
+What are expressions?
+
 What are the different ways we can create a function?
 
 ## Functions _are_ objects
 
 'callbacks'
-
-## Scope
 
 ## Game 2: Name that Scope
 
@@ -130,21 +131,33 @@ updateMammal();
 console.log(mammal);
 ```
 
-### 'closures'
+
+
+## Scope
 
 Remember Deli counter?
 
-## IIFEs
+## Closures and IIFEs
+
+Example: Memoization
+
+## Functional Programming
+
+- Declarative vs. Imperative
+- pure functions
+- higher order functions
+- function composition
 
 ## Javascript 'Razors'
 
 From before:
-- Number type - it's everything
-- NaN (Infinity, -Infinity)
-- Get 'bad' values instead of errors
-- More falsy things
-- null is weird
+- 'bad' values instead of errors
 
 New Danger:
 - globals
+  - 'use strict';
 - shadowing
+
+## Links
+
+- [Strict Mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)

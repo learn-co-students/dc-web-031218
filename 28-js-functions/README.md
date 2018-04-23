@@ -1,5 +1,5 @@
 # JS Functions
-
+## Agenda
 We'll keep seeing
 - Syntax
 - Differences between ruby and js
@@ -12,7 +12,7 @@ This lecture:
   - Pass functions as arguments to functions
   - Return functions inside functions
   - arrow syntax
-- Scope
+- Scope (let, const, var)
 - Closures
 - IIFEs
 
@@ -35,7 +35,9 @@ Primitive -- passed by value (immutable)
 - Null
 - Undefined
 - Symbol
+
 ----
+
 Object
 - Object
 
@@ -49,7 +51,7 @@ What are the different ways we can create a function?
 
 ## Scope
 
-## Game #2: Scope game
+## Game 2: Name that Scope
 
 ```js
 

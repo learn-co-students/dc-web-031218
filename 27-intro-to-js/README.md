@@ -97,7 +97,7 @@ in ruby 'sending' methods to objects
 
 What will we see?
 
-```
+```js
 function changeValue(str) {
   str.toUpperCase()
 }

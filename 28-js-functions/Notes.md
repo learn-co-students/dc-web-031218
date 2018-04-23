@@ -1,42 +1,66 @@
-Functional Programming Paradigms
-Declarative versus imperative
+# Functional Programming Paradigms
+## Declarative versus imperative
 
 Imperative (procedural)
-How to do some operation
-Based on statements such as if, for, and/or switch
-Declarative
-What operations to do
-Based on expressions which resolve to a value
+- How to do some operation
+- Based on statements such as if, for, and/or switch
+- Declarative
+- What operations to do
+- Based on expressions which resolve to a value
+
 Pure functions
+- Given the same inputs, the function will always return the same output
+- Has no side-effects, meaning it doesn't change anything in the program
+- Things that are side effects
+  * Modifying any external variable or object property
+  * Logging to the console
+  * Writing to the screen
+  * Writing to a file
+  * Writing to the network
+  * Triggering any external process
+  * Calling any other functions with side-effects
 
-Given the same inputs, the function will always return the same output
-Has no side-effects, meaning it doesn't change anything in the program * Modifying any external variable or object property * Logging to the console * Writing to the screen * Writing to a file * Writing to the network * Triggering any external process * Calling any other functions with side-effects
-Avoid shared state * Don't use variables/data from outside of the function
-Avoid mutating state * Creating new objects: Object.assign * Shallow immutability: Object.freeze
-References * Quick Read - Medium * In depth read - Medium
-Higher-order functions and reusability
+Avoid shared state
+  * Don't use variables/data from outside of the function
+Avoid mutating state
+  * Creating new objects: Object.assign
+  * Shallow immutability: Object.freeze
 
-Abstract or isolate actions, effects, or async flow control using callback functions, promises
-Create utilities which can act on a wide variety of data types (think functional library)
-Partial application of a function to its arguments or create a curry-able function for the purpose of reuse or function composition
-Take a list of functions and return some composition of those input functions
-References * Simple Explanation of Higher Order Functions - Quora * Eloquent JavaScript HOF - ebook * Sitepoint * Currying and Partial Application
-Function composition
+References
+* Quick Read - [Medium](https://medium.com/@jamesjefferyuk/javascript-what-are-pure-functions-4d4d5392d49c)
+* In depth read - [Medium](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976)
 
-Combine two or more functions to perform some computation * f(g(x))
-Combine two or more functions to produce a new function * f(g)(x) === f(g(x))
-References * Composition
-Memoization
+## Higher-order functions and reusability
 
-Memoization - Good article
-Anonymous Functions
+- Abstract or isolate actions, effects, or async flow control using callback functions, promises
+- Create utilities which can act on a wide variety of data types (think functional library)
+- Partial application of a function to its arguments or create a curry-able function for the purpose of reuse or function composition
+- Take a list of functions and return some composition of those input functions
 
-Recursion
+## References
+* Simple Explanation of Higher Order Functions - [Quora](https://www.quora.com/What-is-a-simple-explanation-of-higher-order-functions-and-callbacks-in-JavaScript)
+* Eloquent JavaScript HOF - [ebook](http://eloquentjavascript.net/05_higher_order.html)
+* [Sitepoint](https://www.sitepoint.com/higher-order-functions-javascript/)
+* [Currying and Partial Application](https://medium.com/wdstack/javascript-function-composition-currying-and-partial-application-5a04107530ee)
 
-Array methods .forEach, .map, .filter, .reduce
+## Function composition
 
-Examples
+Combine two or more functions to perform some computation
+* f(g(x))
+Combine two or more functions to produce a new function
+* f(g)(x) === f(g(x))
 
+[Article](http://blog.ricardofilipe.com/post/javascript-composition-for-dummies)
+
+## Memoization
+  [Good article](https://addyosmani.com/blog/faster-javascript-memoization/)
+
+
+## Array methods .forEach, .map, .filter, .reduce
+
+### Examples
+
+```js
  // forEach passing function definition
  let arr = [1, 2, 3, 4, 5];
  arr.forEach(num => console.log(num);)
@@ -71,3 +95,4 @@ Examples
  .filter(num => num < 10)
  .reduce((acc, val, ind) => acc + val)
  // => 18
+ ```

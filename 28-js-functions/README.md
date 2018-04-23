@@ -8,10 +8,6 @@ We'll keep seeing
 This lecture:
 - statements vs expressions
 - functions are objects
-  - Assign functions to variables
-  - Pass functions as arguments to functions
-  - Return functions inside functions
-  - arrow syntax
 - Scope (let, const, var)
 - Closures
 - IIFEs
@@ -50,7 +46,11 @@ What are the different ways we can create a function?
 
 ## Functions _are_ objects
 
-'callbacks'
+- Assign functions to variables
+- Pass functions as arguments to functions
+- Return functions from functions
+- Arrow syntax
+- 'Callbacks'
 
 ## Game 2: Name that Scope
 

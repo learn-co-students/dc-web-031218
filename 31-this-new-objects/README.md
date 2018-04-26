@@ -84,13 +84,15 @@ obj = { num: 6, multiply: arrayTimesThisBind }
 obj.multiply([1,2,3])
 ```
 
-## Objects, Factories, Prototypes, Constructors
+## Classes in JS?
 
-## Class syntax
+We want something like ruby classes, so that we can encapsulate data and behavior.
+
+How do we get it?
+
+- Objects
+- Factories
+- Constructor calls
+- Class syntax
 
 ## Relationships between objects
-
-- Create private "class" variables using the ES6 class syntax, closures, and IIFEs
-- Create relationships between JS classes
-- Write instance methods for JS classes
-- Write class methods for JS classes (e.g. filters and search functions)

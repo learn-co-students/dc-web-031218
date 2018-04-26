@@ -30,6 +30,7 @@ class Cat < Pet
 
   def initialize(name, age, indoor)
     @indoor = indoor
+    super
   end
 
   def meow
@@ -40,3 +41,7 @@ class Cat < Pet
     !self.indoor
   end
 end
+
+cat = Cat.new('Sparkles', 6, true)
+dog = Dog.new('Fluffy', 3, 'Cocker Spaniel')
+hound = Dachshund.new('Hound', 11,

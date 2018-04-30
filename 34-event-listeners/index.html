@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  div {
+    margin: 24px;
+    font-size: 24px;
+  }
+
+  body {
+    margin: 20px;
+  }
+
+  </style>
+</head>
+<body>
+
+  <div id="root">
+    One
+    <div id="child-one">
+      Two
+      <div id="child-two">
+        Three
+        <div id="child-three">
+          Four
+          <div id="leaf">
+            Five
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <form id="puppy-form" action="index.html" method="post">
+    <div>
+      <label for="name">Name</label>
+      <input id="puppy-name" type="text" name="name" value="">
+    </div>
+    <div>
+      <label for="age">Age</label>
+      <input id="puppy-age" type="text" name="age" value="">
+    </div>
+    <div>
+      <label for="breed">Breed</label>
+      <input id="puppy-breed" type="text" name="breed" value="">
+    </div>
+    <div>
+      <button id="puppy-button" type="button" name="button">Add Puppy</button>
+    </div>
+  </form>
+
+  <div class="puppies-section">
+
+  <h2> Puppies </h2>
+  <ul id="puppy-list">
+  </ul>
+  </div>
+
+  <script src="./index.js" charset="utf-8"></script>
+</body>
+</html>

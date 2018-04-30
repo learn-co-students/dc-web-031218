@@ -10,11 +10,37 @@
 
 ## Event Listeners
 
+We set up some function to handle some event
+
+Kinds of events:
+- user input (click, keyboard input, form submit)
+- history navigation
+- location change
+
+function will be called at some later time
+
 ## Propagation
+
+Events 'bubble up' the tree of nodes
+
+The order that they are called in is:
+- innermost first
+- which event listener was registered first
+
+Stop the propagation with `event.stopPropagation`
 
 ## Default Behavior
 
-## Forms and Events
+most native events have a default behavior
+
+we can stop that behavior with `event.preventDefault`
+
+## Other behaviors
+
+`event` is a special keyword in an event - bound to the event
+
+`this` is the node that was listening for the event
+
 
 ## Resources
 

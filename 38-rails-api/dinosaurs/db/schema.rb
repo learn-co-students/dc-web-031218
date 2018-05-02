@@ -10,21 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180502143043) do
+ActiveRecord::Schema.define(version: 20180502182116) do
 
-  create_table "api_v1_dinosaurs", force: :cascade do |t|
-    t.text "name"
-    t.text "breed"
-    t.text "time_period"
-    t.text "diet"
+  create_table "abilities", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "abilities_dinosaurs", force: :cascade do |t|
+    t.integer "ability_id"
+    t.integer "dinosaur_id"
+    t.index ["ability_id"], name: "index_abilities_dinosaurs_on_ability_id"
+    t.index ["dinosaur_id"], name: "index_abilities_dinosaurs_on_dinosaur_id"
+  end
+
   create_table "dinosaurs", force: :cascade do |t|
     t.string "name"
-    t.string "breed"
-    t.string "time_period"
+    t.integer "height"
+    t.integer "weight"
+    t.integer "pokedex_order"
+    t.string "front_sprite"
+    t.string "back_sprite"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dinosaurs_moves", force: :cascade do |t|
+    t.integer "dinosaur_id"
+    t.integer "move_id"
+    t.index ["dinosaur_id"], name: "index_dinosaurs_moves_on_dinosaur_id"
+    t.index ["move_id"], name: "index_dinosaurs_moves_on_move_id"
+  end
+
+  create_table "dinosaurs_types", force: :cascade do |t|
+    t.integer "dinosaur_id"
+    t.integer "type_id"
+    t.index ["dinosaur_id"], name: "index_dinosaurs_types_on_dinosaur_id"
+    t.index ["type_id"], name: "index_dinosaurs_types_on_type_id"
+  end
+
+  create_table "moves", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

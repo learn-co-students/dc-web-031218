@@ -1,9 +1,8 @@
-# fetching to fake json server to seed data
-pokemonJSON = RestClient.get('http://localhost:3000/pokemons')
+pokemonJSON = File.read('db/db.json')
 
 pokemonData = JSON.parse(pokemonJSON)
 
-pokemonData.each do |pokemon|
+pokemonData['pokemons'].each do |pokemon|
   dino_attributes = {
     name: pokemon['name'],
     height: pokemon['height'],

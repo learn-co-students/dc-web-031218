@@ -1,0 +1,11 @@
+# random Fieri quotes courtesy of http://www.scottrobertsweb.com/guy-fieri-random-quote-generator-2/
+User.create([
+              { avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Guy_Fieri_at_Guantanamo_2.jpg/440px-Guy_Fieri_at_Guantanamo_2.jpg', quote: 'I wanna be the ambassador of flavortown' },
+              { avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Guy_Fieri_Receives_Key_to_City_of_Ferndale.jpg/440px-Guy_Fieri_Receives_Key_to_City_of_Ferndale.jpg', quote: 'I could put this on a flip-flop and it would taste good.' },
+              { avatar: 'https://thumb7.shutterstock.com/display_pic_with_logo/426805/426805,1250285974,1/stock-photo-anaheim-ca-august-america-s-rock-n-roll-chef-guy-fieri-attend-celebrity-food-show-at-hilton-35281804.jpg', quote: 'You can find that dictionary at the Flavortown Library.' },
+              { avatar: 'https://thumb9.shutterstock.com/display_pic_with_logo/842245/842245,1321316627,102/stock-photo-guy-fieri-at-the-nbc-universal-winter-press-tour-at-the-langham-huntington-hotel-pasadena-88965571.jpg', quote: 'Do you get any tater with that gator?' },
+              { avatar: 'https://thumb7.shutterstock.com/display_pic_with_logo/426805/426805,1250285974,1/stock-photo-anaheim-ca-august-america-s-rock-n-roll-chef-guy-fieri-attend-celebrity-food-show-at-hilton-35281804.jpg', quote: 'This patio goes off the hook - I think the folks are in a Flavortown food coma.' },
+              { avatar: 'https://thumb1.shutterstock.com/display_pic_with_logo/564025/186092009/stock-photo-las-vegas-apr-guy-fieri-at-the-academy-of-country-music-awards-arrivals-at-mgm-grand-186092009.jpg', quote: 'The sauce is money!' },
+              { avatar: 'https://thumb9.shutterstock.com/display_pic_with_logo/564025/564025,1295035669,5/stock-photo-pasadena-ca-jan-guy-fieri-at-the-nbc-tca-winter-party-at-langham-huntington-hotel-on-68976385.jpg', quote: 'Holy-moly, Stromboli!' },
+              { avatar: 'https://thumb9.shutterstock.com/display_pic_with_logo/64736/460625578/stock-photo-new-york-ny-usa-july-chef-guy-fieri-presented-designed-for-carnival-cruises-open-air-460625578.jpg', quote: 'It was a lightning bolt of an idea in Flavortown that pranked the un-prankable mayor, Guy Fieri.' }
+            ])

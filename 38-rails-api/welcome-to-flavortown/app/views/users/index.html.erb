@@ -1,0 +1,9 @@
+<h1>Welcome To Flavortown ™️</h1>
+
+<% @users.each do |user| %>
+  <p><%= user.quote %></p>
+  <%= link_to user_path(user) do %>
+    <%= image_tag user.avatar %>
+  <% end %>
+  <hr>
+<% end %>

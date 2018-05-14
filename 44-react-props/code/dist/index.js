@@ -1,69 +1,29 @@
 "use strict";
 
-var Navbar = function Navbar(props) {
-  return React.createElement(
-    "div",
-    { className: "ui inverted " + props.color + " menu" },
-    React.createElement(
-      "a",
-      { className: "item" },
-      React.createElement(
-        "h2",
-        { className: "ui header" },
-        React.createElement("i", { className: props.icon + " icon" }),
-        React.createElement(
-          "div",
-          { className: "content" },
-          props.title
-        ),
-        React.createElement(
-          "div",
-          { className: "sub header" },
-          props.description
-        )
-      )
-    )
-  );
-};
+var _navbar = require("./components/navbar");
 
-// const Navbar = props => {
-//   return React.createElement(
-//     "div",
-//     {
-//       className: `ui inverted ${props.color} menu`
-//     },
-//     React.createElement(
-//       "a",
-//       { className: "item" },
-//       React.createElement(
-//         "h2",
-//         {
-//           className: "ui header"
-//         },
-//         [
-//           React.createElement("i", { className: `${props.icon} icon` }, null),
-//           React.createElement("div", { className: "content" }, props.title),
-//           React.createElement(
-//             "div",
-//             { className: "sub header" },
-//             props.description
-//           )
-//         ]
-//       )
-//     )
-//   );
-// };
+var _navbar2 = _interopRequireDefault(_navbar);
 
-ReactDOM.render(React.createElement(
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require("react-dom");
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_reactDom2.default.render(_react2.default.createElement(
   "div",
   null,
-  React.createElement(Navbar, {
+  _react2.default.createElement(_navbar2.default, {
     color: "green",
     title: "ZooKeepr",
     description: "Keep track of your animals",
     icon: "paw"
   }),
-  React.createElement(Navbar, {
+  _react2.default.createElement(_navbar2.default, {
     color: "blue",
     title: "Beekeepr",
     description: "Keep track of your bees",

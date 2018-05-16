@@ -11,10 +11,35 @@ class App extends React.Component {
       pets: [],
       adoptedPets: [],
       filters: {
-        type: 'all',
+        type: 'all'
       }
     };
   }
+
+  onAdoptPet = petId => {
+    this.setState({ adoptedPets: [...this.state.adoptedPets, petId] }, () =>
+      // setState accepts a second argument of a callback fn to be invoked after setState is done. Remember that setState is ASYNC
+      console.log(this.state.adoptedPets)
+    );
+  };
+
+  onChangeType = event => {
+    this.setState({ filters: { ...this.state.filters, type: event.target.value } }, () =>
+      console.log(this.state)
+    );
+  };
+
+  fetchPets = () => {
+    let endpoint = '/api/pets';
+
+    if (this.state.filters.type !== 'all') {
+      endpoint += `?type=${this.state.filters.type}`;
+    }
+
+    fetch(endpoint)
+      .then(r => r.json())
+      .then(pets => this.setState({ pets: pets }), () => console.log(this.state));
+  };
 
   render() {
     return (
@@ -25,10 +50,21 @@ class App extends React.Component {
         <div className="ui container">
           <div className="ui grid">
             <div className="four wide column">
-              <Filters />
+              {/*app passes two functions to Filters: onChangeType && fetchPets react will construct a props object for us that will look something like this:
+                props: {
+                  changeTypeCallback: App.onChangeType,
+                  findPetsCallback: App.fetchPets
+                }
+                */}
+              <Filters changeTypeCallback={this.onChangeType} findPetsCallback={this.fetchPets} />
             </div>
             <div className="twelve wide column">
-              <PetBrowser />
+              {/*onAdoptPet is passed THROUGH PetBrowser to each Pet */}
+              <PetBrowser
+                onAdoptPet={this.onAdoptPet}
+                pets={this.state.pets}
+                adoptedPets={this.state.adoptedPets}
+              />
             </div>
           </div>
         </div>

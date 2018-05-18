@@ -1,5 +1,7 @@
 # Component Lifecycle
 
+## Hooks
+
 Methods will get called
 - at particular moments in the life of the component
 - with particular arguments

@@ -1,6 +1,19 @@
 # Component Lifecycle
 
+Also default props exist, work like default function parameters
+
 ## Hooks
+
+git
+  - before commit
+  - after push
+
+rails
+  - controller hooks
+  - activerecord
+    - before_save
+    - after_commit
+    - before_validate
 
 Methods will get called
 - at particular moments in the life of the component
@@ -20,15 +33,19 @@ How to know when to use which method?
 - `shouldComponentUpdate()`
   - decide whether or not to render
   - for performance, won't need to implement otherwise
+
 - `static getDerivedStateFromProps()`
   - best practice is to compute in render
   - usually violates single source of truth to have a component state initialized from props
+
+
 - `getSnapshotBeforeUpdate()`
   - to collect some values (like a scroll position) before an update
   - result is passed as the third arg to `componentDidUpdate`
 - `componentDidUpdate()`
   - called after update
   - gets result of `getSnapshotBeforeUpdate`
+
 - `componentDidCatch()`
   - Used to set up error boundaries around children
   - Can display a fallback UI

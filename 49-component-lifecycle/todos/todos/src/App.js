@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <TodosSection />
+        <TodosSection color="green" />
       </div>
     );
   }

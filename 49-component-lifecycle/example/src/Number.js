@@ -11,6 +11,7 @@ export default class extends React.Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
+    // 'this' will not be the component
     if (nextProps.number > prevState.number) {
       return { increasing: true, number: nextProps.number };
     } else {
@@ -20,6 +21,9 @@ export default class extends React.Component {
 
   render() {
     const { increasing } = this.state;
+    if (increasing) {
+      throw "The number increased";
+    }
     return (
       <div>
         <h1 style={{ color: increasing ? "green" : "red" }}>

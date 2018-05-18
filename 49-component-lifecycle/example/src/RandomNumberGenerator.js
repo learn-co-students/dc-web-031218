@@ -1,5 +1,5 @@
-import React from 'react';
-import Number from './Number';
+import React from "react";
+import Number from "./Number";
 
 export default class extends React.Component {
   constructor() {
@@ -11,6 +11,7 @@ export default class extends React.Component {
 
   componentDidMount() {
     this.timer = setInterval(() => {
+      console.log("timer run");
       this.setState({ number: Math.floor(Math.random() * 100) });
     }, 1500);
   }
@@ -19,10 +20,19 @@ export default class extends React.Component {
     clearInterval(this.timer);
   }
 
+  componentDidCatch(error) {
+    console.log(error);
+    this.setState({ error: true });
+  }
+
   render() {
     return (
       <div>
-        <Number number={this.state.number} />
+        {this.state.error ? (
+          <div>There was an error</div>
+        ) : (
+          <Number number={this.state.number} />
+        )}
       </div>
     );
   }

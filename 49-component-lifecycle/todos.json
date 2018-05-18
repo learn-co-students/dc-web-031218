@@ -1,6 +1,6 @@
 {
   "todos": [
-    { "id": 1, text: "Step 1. Get one whole cantelope" },
-    { "id": 2, text: "Step 2. Get two more cantelopes" }
+    { "id": 1, "text": "Step 1. Get one whole cantelope" },
+    { "id": 2, "text": "Step 2. Get two more cantelopes" }
   ]
 }

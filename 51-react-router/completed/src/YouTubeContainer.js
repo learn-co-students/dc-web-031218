@@ -30,6 +30,7 @@ class YouTubeContainer extends Component {
 
   selectVideo = selectedVideo => {
     this.setState({ selectedVideo });
+    this.props.history.push(`/video/${selectedVideo.id.videoId}`);
   };
 
   videoGet = id => {
@@ -73,14 +74,13 @@ class YouTubeContainer extends Component {
               <Search
                 search={this.videoSearch}
                 selectVideo={this.selectVideo}
-                {...props}
-                {...this.state}
+                videos={this.state.videos}
               />
             )}
           />
           <Route
             path="/video/:id"
-            render={props => <Video {...props} {...this.state} />}
+            render={props => <Video selectedVideo={this.state.selectedVideo} />}
           />
           <Route path="/" render={props => <Redirect to="/search" />} />
         </Switch>

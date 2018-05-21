@@ -6,13 +6,7 @@ const Search = props => {
   return (
     <div className="ui grid container">
       <SearchBar onSearchChange={props.search} />
-      <VideoList
-        onVideoSelect={video => {
-          props.selectVideo(video);
-          props.history.push(`/video/${video.id.videoId}`);
-        }}
-        videos={props.videos}
-      />
+      <VideoList onVideoSelect={props.selectVideo} videos={props.videos} />
     </div>
   );
 };

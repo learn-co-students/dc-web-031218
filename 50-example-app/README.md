@@ -2,7 +2,30 @@
 
 Let's build out a youtube frontend with React!
 
+1. Decide on component heirarchy
+2. Static Version
+3. Decide where state lives
+4. Build that
+
+App - searchResults[], selectedVideo
+  SearchBar - onChange
+  VideoDetail - current video
+  VideoList
+    VideoListItem
+
+Search as we type in the searchbar
+First result -=> Video Detail
+All results => Video List
+When we click a video in the list, select that video (show it in the detail view)
+
+Todo:
+Dropdown menu
+
 ## Sample Api Response
+
+```js
+`https://www.googleapis.com/youtube/v3/search?part=snippet&key=${API_KEY}&q=${searchTerm}&type=video`
+```
 
 ```js
 // const response = [

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
 
 import VideoDetail from "./VideoDetail";
 import VideoList from "./VideoList";
 import SearchBar from "./SearchBar";
+import Login from "./Login";
 
 import { API_KEY } from "./keys";
 import _ from "lodash";
@@ -46,14 +48,29 @@ class YouTubeContainer extends Component {
 
     return (
       <div className="ui grid container">
-        <SearchBar onSearchChange={term => videoSearch(term)} />
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route
+            path={["/video/:videoId", "/search"]}
+            render={props => {
+              return (
+                <div>
+                  <SearchBar onSearchChange={term => videoSearch(term)} />
 
-        <VideoDetail video={this.state.selectedVideo} />
+                  <VideoDetail video={this.state.selectedVideo} />
 
-        <VideoList
-          videos={this.state.videos}
-          onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
-        />
+                  <VideoList
+                    videos={this.state.videos}
+                    onVideoSelect={selectedVideo => {
+                      props.history.push(`/video/${selectedVideo.id.videoId}`);
+                      this.setState({ selectedVideo });
+                    }}
+                  />
+                </div>
+              );
+            }}
+          />
+        </Switch>
       </div>
     );
   }

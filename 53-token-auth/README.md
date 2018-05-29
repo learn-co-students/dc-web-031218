@@ -6,7 +6,26 @@
 
 ## Authentication
 
+Different strategies
+Basic Auth - send the username and password every time
+Cookie Auth - use the Set-Cookie header, browser will send the cookie on subsequent requests
+Token Auth - use a token to authenticate
+
 Verify _who_
+
+2-step
+1 - username  password
+2 - later, 'hand stamp' (cookie, token)
+
+```
+session[:user_id] = 7
+
+...
+
+if session[:user_id]
+  ...
+end
+```
 
 ## Authorization
 

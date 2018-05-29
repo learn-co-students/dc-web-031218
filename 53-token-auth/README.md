@@ -14,6 +14,8 @@ Verify _what permissions_
 
 ## JWT
 
+Securely sign some key value pairs
+
 ## Let's build a login!
 
 Login

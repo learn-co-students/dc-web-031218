@@ -3,26 +3,49 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import logo from "./logo.svg";
 import "./App.css";
+import { createStore } from "redux";
+
+// what is the state of the app? what is the shape?
+// { count: number }
+
+const reducer = (oldState = { count: 0 }, action) => {
+  console.log(oldState, action);
+  switch (action.type) {
+    case "INCREMENT":
+      return {
+        count: oldState.count + action.payload.amount
+      };
+    case "DECREMENT":
+      return {
+        count: oldState.count - action.payload.amount
+      };
+    default:
+      return oldState;
+  }
+};
+
+const increment = amount =>
+  store.dispatch({ type: "INCREMENT", payload: { amount } });
+
+const decrement = amount =>
+  store.dispatch({ type: "DECREMENT", payload: { amount } });
+
+const store = createStore(reducer);
 
 class App extends Component {
-  state = { count: 0 };
-
-  increment = () => {
-    this.setState(prevState => ({ count: prevState.count + 1 }));
-  };
-
-  decrement = () => {
-    this.setState(prevState => ({ count: prevState.count - 1 }));
-  };
+  componentDidMount() {
+    store.subscribe(() => this.forceUpdate());
+  }
 
   render() {
+    console.log(store.getState());
     return (
       <div className="App">
-        <Header count={this.state.count} />
+        <Header count={store.getState().count} />
         <Counter
-          count={this.state.count}
-          increment={this.increment}
-          decrement={this.decrement}
+          count={store.getState().count}
+          increment={increment}
+          decrement={decrement}
         />
       </div>
     );
@@ -51,8 +74,10 @@ class Counter extends Component {
     return (
       <div className="Counter">
         <h1>{this.props.count}</h1>
-        <button onClick={this.props.decrement}> - </button>
-        <button onClick={this.props.increment}> + </button>
+        <button onClick={() => this.props.decrement(2)}> - 2 </button>
+        <button onClick={() => this.props.decrement(1)}> - </button>
+        <button onClick={() => this.props.increment(1)}> + </button>
+        <button onClick={() => this.props.increment(2)}> + 2 </button>
       </div>
     );
   }

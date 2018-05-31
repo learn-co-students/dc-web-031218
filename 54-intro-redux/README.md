@@ -16,7 +16,9 @@ https://redux.js.org/basics/actions
 
 ## Problems
 Connecting Redux to React
+  react-redux
 How to manage very large reducers? (managing lots of state keys?)
+  combineReducers
 
 ## React-Redux
 Provider (similar to BrowserRouter)

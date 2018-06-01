@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import PaintingList from './PaintingList';
-import PaintingShow from './PaintingShow';
-import * as actions from '../actions';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import PaintingList from "./PaintingList";
+import PaintingShow from "./PaintingShow";
+import * as actions from "../actions";
 // NOTE: actions is a directory.
 // By default import will look for a file called index.js in any directory
 
@@ -34,7 +34,12 @@ class PaintingContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  paintings: state.paintings,
+  paintings:
+    state.galleryFilter === "All Museums"
+      ? state.paintings
+      : state.paintings.filter(
+          painting => painting.museum.name === state.galleryFilter
+        ),
   activePainting: state.paintings.find(p => p.id === state.activePaintingId)
 });
 

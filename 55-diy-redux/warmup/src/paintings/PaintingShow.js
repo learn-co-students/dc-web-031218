@@ -1,6 +1,9 @@
-import React from 'react';
+import React from "react";
+import { connect } from "react-redux";
+import { deletePainting } from "../actions/index";
 
-const PaintingShow = ({ painting }) => {
+const PaintingShow = props => {
+  let { painting, handleDelete } = props;
   return (
     <div className="ui card">
       <div className="image">
@@ -20,10 +23,21 @@ const PaintingShow = ({ painting }) => {
           </p>
           <p>{painting.artist.hometown}</p>
         </div>
-        <div className="ui basic red right aligned button">Delete</div>
+        <div
+          onClick={() => props.handleDelete(painting.id)}
+          className="ui basic red right aligned button"
+        >
+          Delete
+        </div>
       </div>
     </div>
   );
 };
 
-export default PaintingShow;
+const mapDispatchToProps = dispatch => {
+  return {
+    handleDelete: id => dispatch({ type: "DELETE_PAINTING", id: id })
+  };
+};
+
+export default connect(null, mapDispatchToProps)(PaintingShow);

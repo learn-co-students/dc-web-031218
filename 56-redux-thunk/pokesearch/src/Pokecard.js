@@ -1,8 +1,13 @@
 import React from "react";
+import { connect } from "react-redux";
+import { updateSearchText } from "./actions";
 
 const Pokecard = props => {
   return (
-    <div className="pokemon-container">
+    <div
+      onClick={() => props.handleClick(props.pokemon.name)}
+      className="pokemon-container"
+    >
       <div
         className="pokemon-frame"
         style={{
@@ -22,4 +27,10 @@ const Pokecard = props => {
     </div>
   );
 };
-export default Pokecard;
+
+const mapDispatchToProps = dispatch => {
+  return {
+    handleClick: text => dispatch(updateSearchText(text))
+  };
+};
+export default connect(null, mapDispatchToProps)(Pokecard);

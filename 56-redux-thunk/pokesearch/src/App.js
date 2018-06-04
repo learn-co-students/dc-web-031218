@@ -2,8 +2,16 @@ import React, { Component } from "react";
 import "./App.css";
 import Searchbar from "./Searchbar";
 import Pokegrid from "./Pokegrid";
+import { connect } from "react-redux";
+import { fetchPokemon } from "./actions";
 
 class App extends Component {
+  componentDidMount() {
+    // dispatch some action
+    // load the pokemon into the store
+    this.props.onLoad();
+  }
+
   render() {
     return (
       <div className="container">
@@ -13,10 +21,26 @@ class App extends Component {
           alt=""
         />
         <Searchbar />
+        {this.props.loading ? "Loading..." : null}
         <Pokegrid />
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    loading: state.loading
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onLoad: () => {
+      const actionToDispatch = fetchPokemon();
+      dispatch(actionToDispatch);
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

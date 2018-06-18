@@ -5,11 +5,11 @@ import "./App.css";
 const url = "http://localhost:3000/players";
 
 class App extends Component {
-  componentDidMount() {
-    fetch(url)
-      .then(res => res.json())
-      .then(players => console.log(players));
-  }
+  // componentDidMount() {
+  // fetch(url)
+  // .then(res => res.json())
+  // .then(players => console.log(players));
+  // }
 
   render() {
     return (

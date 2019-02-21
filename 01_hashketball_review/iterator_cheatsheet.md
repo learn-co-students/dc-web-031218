@@ -71,7 +71,3 @@
 ].find { |person|  person[:status] == 'student'}
 #=> {:name=>"Bruno Garcia Gonzalez", :status=>"student"}
 ```
-
-## A Blog Post Link
-
-http://code-worrier.com/blog/map-and-next/
